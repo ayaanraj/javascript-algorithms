@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>anagram</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var count = 0,prime = [];
+      for (var i = 1; i < 110; i++) {
+        count = 0;
+        for(var j =2;j<=i/2;j++){
+          if(i%j==0){
+            count++;
+            break;
+          }
+        }
+        if(count == 0 && i!=1){
+          prime.push(i);
+          if(prime.length == 26){
+            break;
+          }
+        }
+      }
+      var primeObj ={};
+      primeObj={
+      'a':prime[0],'b':prime[1],'c':prime[2],'d':prime[3],'e':prime[4],'f':prime[5],'g':prime[6],'h':prime[7],
+      'i':prime[8],'j':prime[9],'k':prime[10],'l':prime[11],'m':prime[12],'n':prime[13],'o':prime[14],'p':prime[15],
+      'q':prime[16],'r':prime[17],'s':prime[18],'t':prime[19],'u':prime[20],'v':prime[21],
+      'w':prime[22],'x':prime[23],'y':prime[24],'z':prime[25]
+    };
+    console.log(primeObj);
+
+    var w1 = 'pot';
+    var w2 = 'top';
+    var w1Array = [],w2Array = [];
+    var mul1 = 1;
+    var mul2 = 1;
+
+    w1Array = w1.split('');
+    w2Array = w2.split('');
+
+    for(var i of w1Array){
+      debugger;
+      mul1 *=primeObj[i];
+    }
+
+    for(var i of w2Array){
+      debugger;
+      mul2 *= primeObj[i];
+    }
+
+    if(mul1 == mul2){
+      console.log('%s and %s are anagram words',w1,w2);
+    }
+    else {
+      console.log('%s and %s are not anagram words',w1,w2);
+    }
+    </script>
+  </body>
+</html>
