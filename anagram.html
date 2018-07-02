@@ -30,7 +30,7 @@
       'q':prime[16],'r':prime[17],'s':prime[18],'t':prime[19],'u':prime[20],'v':prime[21],
       'w':prime[22],'x':prime[23],'y':prime[24],'z':prime[25]
     };
-    console.log(primeObj);
+    console.log("Alphabets mapped to Prime numbers: ",primeObj);
 
     var w1 = 'pot';
     var w2 = 'top';
@@ -42,12 +42,10 @@
     w2Array = w2.split('');
 
     for(var i of w1Array){
-      debugger;
       mul1 *=primeObj[i];
     }
 
     for(var i of w2Array){
-      debugger;
       mul2 *= primeObj[i];
     }
 
